@@ -44,7 +44,7 @@ namespace KLK
             }
             catch (FileNotFoundException e)
             {
-
+                Console.WriteLine("File has not been created yet");
             }
         }
     }

@@ -228,18 +228,18 @@ namespace KLK
 
             sb.DrawString(Game1.Main, "Press N for a new Hint\nPress P to mute the game", new Vector2(76, 460),Color.White, 0, new Vector2(), 0.7f, SpriteEffects.None, 1);
             if(random == -1)
-                sb.DrawString(Game1.Main, "Your HighScore!\n    " + Game1.highScore.ToString(), new Vector2(600, 400), Color.White, rotate, new Vector2(80, 50 / 2), scale, SpriteEffects.None ,1);
+                sb.DrawString(Game1.Main, "Your HighScore: " + Game1.highScore.ToString(), new Vector2(600, 400), Color.White, rotate, new Vector2(80, 50 / 2), scale, SpriteEffects.None ,1);
 
             if(random == 1)
             sb.DrawString(Game1.Main, "Gift Wrapped For\nGoodall, Meghan, \nand Erin!", new Vector2(600, 400), Color.White, rotate, new Vector2(80, 82 / 2), scale, SpriteEffects.None ,1);
             if(random == 0)
                 sb.DrawString(Game1.Main, "Hint: More points\nfor defending \nin short bursts!", new Vector2(600, 400), Color.White, rotate, new Vector2(80, 82 / 2), scale, SpriteEffects.None, 1);
             if(random == 2)
-                sb.DrawString(Game1.Main, "Hint: Don't admire\nKiryuin or \nRyuko!", new Vector2(600, 400), Color.White, rotate, new Vector2(80, 82 / 2), scale, SpriteEffects.None, 1);
+                sb.DrawString(Game1.Main, "Hint: Don't admire\nKiryuin or Ryuko!", new Vector2(600, 400), Color.White, rotate, new Vector2(80, 82 / 2), scale, SpriteEffects.None, 1);
             if(random == 3)
-                sb.DrawString(Game1.Main, "Rainbow Dash\nbest Pony!!!@!@!@1@1\n@!@!@!@!!@!!@121", new Vector2(600, 400), Color.White, rotate, new Vector2(80, 82 / 2), scale, SpriteEffects.None, 1);
+                sb.DrawString(Game1.Main, "Rainbow Dash\nis best pony lol", new Vector2(600, 400), Color.White, rotate, new Vector2(80, 82 / 2), scale, SpriteEffects.None, 1);
             if(random == 4)
-                sb.DrawString(Game1.Main, "Deleting Broswer \nhistory hold \non...", new Vector2(600, 400), Color.White, rotate, new Vector2(80, 82 / 2), scale, SpriteEffects.None, 1);
+                sb.DrawString(Game1.Main, "Deleting Broswer \nhistory hold on...", new Vector2(600, 400), Color.White, rotate, new Vector2(80, 82 / 2), scale, SpriteEffects.None, 1);
             if(random == 5)
                 sb.DrawString(Game1.Main, "Mr. Goodall, Riley \nhas always \nbeen here.", new Vector2(600, 400), Color.White, rotate, new Vector2(80, 82 / 2), scale, SpriteEffects.None, 1);
             if(random == 6)

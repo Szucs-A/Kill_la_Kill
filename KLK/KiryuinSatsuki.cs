@@ -20,7 +20,7 @@ namespace KLK
 
         public static Texture2D speechbubble;
 
-        public const String speech = "Fear is freedom! Subjugation is liberation! Contradiction is truth! \nThose are the facts of this world! And you will surrender to them, \nyou pig in human clothing!";
+        public const String speech = "Fear is freedom! Subjugation is liberation! Contradiction is truth! Those are the facts of this \nworld! And you will surrender to them, you pig in human clothing!";
 
         //the swing up animation
         public static Texture2D KiryuinSwingUp;
@@ -293,7 +293,7 @@ namespace KLK
             {
                 sb.Draw(speechbubble, new Vector2(0, 0), Color.White);
                 sb.DrawString(Game1.Main, whereat, new Vector2(10, 410), Color.Black);
-                sb.Draw(continuetxt, new Vector2(320, 460), cnew);
+                sb.Draw(continuetxt, new Vector2(400 - (continuetxt.Width / 2), 460), cnew);
             }
 
             if(SwingTime > 905){

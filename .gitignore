@@ -9,6 +9,7 @@
 *.user
 *.userosscache
 *.sln.docstates
+Highscore.json
 # Adding Something
 
 # User-specific files (MonoDevelop/Xamarin Studio)
@@ -19,7 +20,7 @@
 x64/
 x86/
 KLK/Content/bin/
-*.json
+
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
