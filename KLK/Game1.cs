@@ -139,7 +139,7 @@ namespace KLK
 
             if (save)
             {
-                Save();
+                Save(highScore);
                 Load();
                 save = false;
             }
@@ -173,10 +173,9 @@ namespace KLK
             this.Exit();
         }
         
-        public void Save()
+        public void Save(int h)
         {
-            Console.WriteLine("Steh");
-            SaveLoad.Save(5);
+            SaveLoad.Save(h);
         }
 
         public void Load()

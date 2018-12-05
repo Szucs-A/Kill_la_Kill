@@ -733,30 +733,20 @@ namespace KLK
                 f.Update();
             }
 
-            if (ryuko.score > Game1.highScore)
-            {
-                Console.WriteLine("Saving");
-                newh = true;
-                Game1.save = true;
-                savedOnce = true;
-            }
-
             if (ryuko.dead)
                 elapsedTime += gt.ElapsedGameTime.Milliseconds;
-
-            /*
+            
             if (ryuko.dead)
             {
                 if (ryuko.score > Game1.highScore && !savedOnce)
                 {
-                    Console.WriteLine("Saving");
+                    Game1.highScore = ryuko.score;
                     newh = true;
                     Game1.save = true;
                     savedOnce = true;
                 }
             }
-            */
-
+            
             //Updates all the numbers
             foreach (Animation an in xList)
             {

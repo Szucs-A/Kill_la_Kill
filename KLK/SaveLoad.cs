@@ -38,15 +38,14 @@ namespace KLK
                 using (JsonTextReader reader = new JsonTextReader(file))
                 {
                     JObject o2 = (JObject)JToken.ReadFrom(reader);
-                    int score = (int)o2.Property("Score");
-                    Console.WriteLine(score);
+                    Game1.highScore = (int)o2.Property("Score");
+
                 }
             }
             catch (FileNotFoundException e)
             {
 
             }
-            
         }
     }
 }
