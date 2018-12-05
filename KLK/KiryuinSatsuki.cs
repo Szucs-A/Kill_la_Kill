@@ -20,7 +20,7 @@ namespace KLK
 
         public static Texture2D speechbubble;
 
-        public const String speech = "Fear is freedom! Subjugation is liberation! Contradiction is truth! Those are the facts of this \nworld! And you will surrender to them, you pig in human clothing!";
+        public const String speech = "Fear is freedom! Subjugation is liberation! Contradiction is truth! Those are the facts\nof this world! And you will surrender to them, you pig in human clothing!";
 
         //the swing up animation
         public static Texture2D KiryuinSwingUp;
