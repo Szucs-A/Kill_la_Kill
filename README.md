@@ -1,4 +1,4 @@
-![promo](https://user-images.githubusercontent.com/35391412/49610722-62415380-f96d-11e8-93c5-9255a4d00de4.PNG)
+![promo](https://user-images.githubusercontent.com/35391412/49611777-a2ee9c00-f970-11e8-8a23-9ee10f2c7656.PNG)
 # Kill la Kill
 I created this game a few years ago in XNA. However, since then XNA has been totatlly deprecated and Monogame has taken its place. So, I have recreated the game inside Monogame to keep its legacy alive. This game is based on the anime series: Kill la Kill. 
 
