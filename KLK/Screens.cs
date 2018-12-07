@@ -123,7 +123,8 @@ namespace KLK
                 else
                     subtracting = true;
 
-            if (Keyboard.GetState().IsKeyDown(Keys.Escape) && Game1.oldkb.IsKeyUp(Keys.Escape))
+            if ((Keyboard.GetState().IsKeyDown(Keys.Escape) && Game1.oldkb.IsKeyUp(Keys.Escape)) || 
+                (Game1.gp.Buttons.B == ButtonState.Pressed && Game1.oldgp.Buttons.B == ButtonState.Released))
             {
                 Game1.gameList.CurrentScreen = new Exit();
                 Game1.gameList.CurrentScreen.Initialize();
@@ -135,13 +136,14 @@ namespace KLK
             r.Update(gt);
             t.Update(gt);
 
-            if(Keyboard.GetState().IsKeyDown(Keys.Up)){
+            if((Keyboard.GetState().IsKeyDown(Keys.Up)) || (Game1.gp.ThumbSticks.Left.Y > 0 && Game1.oldgp.ThumbSticks.Left.Y == 0))
+            {
                 if (buttonpos != 0)
                 {
                     buttonpos--;
                 }
             }
-            if (Keyboard.GetState().IsKeyDown(Keys.Down))
+            if ((Keyboard.GetState().IsKeyDown(Keys.Down)) || (Game1.gp.ThumbSticks.Left.Y < 0 && Game1.oldgp.ThumbSticks.Left.Y == 0))
             {
                 if (buttonpos != 1)
                 {
@@ -181,7 +183,8 @@ namespace KLK
                 else
                     button.hover = false;
 
-                if (Keyboard.GetState().IsKeyDown(Keys.Space)&& button.hover && pressedSpace == null)
+                if ((Keyboard.GetState().IsKeyDown(Keys.Space)&& button.hover && pressedSpace == null) || 
+                    (Game1.gp.Buttons.A == ButtonState.Pressed && button.hover && pressedSpace == null))
                 {
                     pressedSpace = button.DestinationScreen;
                     if(!Game1.mute)
@@ -202,14 +205,13 @@ namespace KLK
                 }
             }
 
-            if(Keyboard.GetState().IsKeyDown(Keys.N) && Game1.oldkb.IsKeyUp(Keys.N)){
+            if((Keyboard.GetState().IsKeyDown(Keys.N) && Game1.oldkb.IsKeyUp(Keys.N)) || (Game1.gp.Buttons.RightShoulder == ButtonState.Pressed && Game1.oldgp.Buttons.RightShoulder == ButtonState.Released)){
                 random = Game1.r.Next(0, 19);
             }
         }
 
         public override void Draw(SpriteBatch sb)
         {
-            
             sb.Draw(menu, new Vector2(0, 0), Color.White);
             foreach (cButton button in Game1.gameList.CurrentScreen.ButtonList)
             {
@@ -226,7 +228,7 @@ namespace KLK
             r.Draw(sb);
             t.Draw(sb);
 
-            sb.DrawString(Game1.Main, "Press N for a new Hint\nPress P to mute the game", new Vector2(76, 460),Color.White, 0, new Vector2(), 0.7f, SpriteEffects.None, 1);
+            sb.DrawString(Game1.Main, "Press N(Right Bumper) for a new Hint\nPress P(X) to mute the game", new Vector2(76, 460),Color.White, 0, new Vector2(), 0.7f, SpriteEffects.None, 1);
             if(random == -1)
                 sb.DrawString(Game1.Main, "Your HighScore: " + Game1.highScore.ToString(), new Vector2(600, 400), Color.White, rotate, new Vector2(80, 50 / 2), scale, SpriteEffects.None ,1);
 
@@ -268,6 +270,9 @@ namespace KLK
                 sb.DrawString(Game1.Main, "If that is what death is like,\nI'm never dying - Riley", new Vector2(600, 400), Color.White, rotate, new Vector2(150, 15), scale, SpriteEffects.None, 1);
             if (random == 18)
                 sb.DrawString(Game1.Main, "Jontron > AngryVideoGameNerd", new Vector2(600, 400), Color.White, rotate, new Vector2(140, 15), scale, SpriteEffects.None, 1);
+
+            if(Game1.displaywarn)
+                sb.DrawString(Game1.Main, "Your controller is not compatable with this game.", new Vector2(450, 477), Color.White, 0, new Vector2(), 0.7f, SpriteEffects.None, 1);
 
             sb.Draw(blackground, new Vector2(), Color.White * op);
         }
@@ -375,7 +380,7 @@ namespace KLK
             heellaunch.Update(gt);
             toe.Update(gt);
 
-            if (Game1.kb.IsKeyDown(Keys.Space) && Game1.oldkb.IsKeyUp(Keys.Space))
+            if ((Game1.kb.IsKeyDown(Keys.Space) && Game1.oldkb.IsKeyUp(Keys.Space)) || (Game1.gp.Buttons.A == ButtonState.Pressed && Game1.oldgp.Buttons.A == ButtonState.Released))
             {
                 Game1.gameList.CurrentScreen = new Playing();
                 Game1.gameList.CurrentScreen.Initialize();
@@ -383,7 +388,7 @@ namespace KLK
                 Game1.Movement.Play();
             }
 
-            if (Game1.kb.IsKeyDown(Keys.Escape) || Game1.kb.IsKeyDown(Keys.M))
+            if ((Game1.kb.IsKeyDown(Keys.Escape) || Game1.kb.IsKeyDown(Keys.M)) || (Game1.gp.Buttons.B == ButtonState.Pressed))
             {
                 MediaPlayer.Stop();
                 Game1.gameList.CurrentScreen = new MainMenu();
@@ -694,7 +699,7 @@ namespace KLK
 
             kiryuin.Update(gt);
 
-            if(Keyboard.GetState().IsKeyDown(Keys.R) && Game1.oldkb.IsKeyUp(Keys.R))
+            if((Keyboard.GetState().IsKeyDown(Keys.R) && Game1.oldkb.IsKeyUp(Keys.R)) || (Game1.gp.Buttons.Y == ButtonState.Pressed && Game1.oldgp.Buttons.Y == ButtonState.Released))
             {
                 savedOnce = false;
                 Game1.PlayingLoop = true;
@@ -708,7 +713,7 @@ namespace KLK
                     Game1.Movement.Play();
                 }
             }
-            if (Keyboard.GetState().IsKeyDown(Keys.M))
+            if ((Keyboard.GetState().IsKeyDown(Keys.M)) || (Game1.gp.Buttons.B == ButtonState.Pressed))
             {
                 savedOnce = false;
                 Game1.gameList.CurrentScreen = new MainMenu();
@@ -716,7 +721,7 @@ namespace KLK
                 if (!Game1.mute)
                 Game1.Movement.Play();
             }
-            if (Keyboard.GetState().IsKeyDown(Keys.Escape))
+            if ((Keyboard.GetState().IsKeyDown(Keys.Escape)) || (Game1.gp.Buttons.Back == ButtonState.Pressed))
             {
                 if(ryuko.dead)
                     Game1.gameList.CurrentScreen = new Exit();

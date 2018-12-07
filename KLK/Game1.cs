@@ -26,6 +26,9 @@ namespace KLK
         public static KeyboardState oldkb = new KeyboardState();
         public static MouseState ms = new MouseState();
 
+        public static GamePadState gp = new GamePadState();
+        public static GamePadState oldgp = new GamePadState();
+
         public static Texture2D t;
 
         public static SpriteFont Main;
@@ -74,6 +77,8 @@ namespace KLK
             gameList.Initialize();
         }
 
+        public static bool displaywarn = false;
+
         /// <summary>
         /// LoadContent will be called once per game and is the place to load
         /// all of your content.
@@ -111,6 +116,8 @@ namespace KLK
             // TODO: Unload any non ContentManager content here
         }
 
+        public static bool checkedForGamepad = false;
+
         /// <summary>
         /// Allows the game to run logic such as updating the world,
         /// checking for collisions, gathering input, and playing audio.
@@ -121,10 +128,37 @@ namespace KLK
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
-
+            
             ms = Mouse.GetState();
             kb = Keyboard.GetState();
+            gp = GamePad.GetState(PlayerIndex.One);
 
+            if (!checkedForGamepad)
+            {
+                checkedForGamepad = true;
+
+                if (gp.IsConnected)
+                {
+                    var capabilities = GamePad.GetCapabilities(PlayerIndex.One);
+
+                    if (capabilities != null)
+                    {
+                        bool hasX = capabilities.HasXButton;
+                        bool hasY = capabilities.HasYButton;
+                        bool hasA = capabilities.HasAButton;
+                        bool hasB = capabilities.HasBButton;
+                        bool rightB = capabilities.HasRightShoulderButton;
+                        bool leftJ = capabilities.HasLeftYThumbStick;
+                        bool hasBack = capabilities.HasBackButton;
+
+                        if (!(hasX && hasY && hasA && hasB && rightB && leftJ && hasBack))
+                        {
+                            displaywarn = true;
+                        }
+                    }
+                }
+            }
+            
             if (playelevator)
                 CoutnerforSongs += gameTime.ElapsedGameTime.Milliseconds;
 
@@ -135,6 +169,7 @@ namespace KLK
                 CoutnerforSongs = 0;
                 playelevator = false;
             }
+
             gameList.Update(gameTime);
 
             if (save)
@@ -147,7 +182,8 @@ namespace KLK
             if (!(gameList.CurrentScreen is Playing) && PlayingLoop)
                 PlayingLoop = false;
 
-            if (Keyboard.GetState().IsKeyDown(Keys.P) && gameList.CurrentScreen is MainMenu && oldkb.IsKeyUp(Keys.P))
+            if ((Game1.gp.Buttons.X == ButtonState.Pressed && gameList.CurrentScreen is MainMenu && oldgp.Buttons.X == ButtonState.Released) || 
+                (Keyboard.GetState().IsKeyDown(Keys.P) && gameList.CurrentScreen is MainMenu && oldkb.IsKeyUp(Keys.P)))
                 if (mute == false)
                 {
                     mute = true;
@@ -163,6 +199,7 @@ namespace KLK
                 Quit();
 
             oldkb = kb;
+            oldgp = gp;
             // TODO: Add your update logic here
 
             base.Update(gameTime);

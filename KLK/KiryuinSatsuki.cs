@@ -212,7 +212,7 @@ namespace KLK
 
                         //If it is the beginining of the game
                         //IF space is pressed she then pulls the sword out of the ground
-                        if (Game1.kb.IsKeyDown(Keys.Space) && Game1.oldkb.IsKeyUp(Keys.Space))
+                        if ((Game1.kb.IsKeyDown(Keys.Space) && Game1.oldkb.IsKeyUp(Keys.Space)) || (Game1.gp.Buttons.A == ButtonState.Pressed && Game1.oldgp.Buttons.A == ButtonState.Released))
                         {
                             if (whereat.Length == speech.Length)
                             {
@@ -260,7 +260,7 @@ namespace KLK
                     }
                     else
                     {
-                        if (Game1.kb.IsKeyDown(Keys.Space) && Game1.oldkb.IsKeyUp(Keys.Space))
+                        if ((Game1.kb.IsKeyDown(Keys.Space) && Game1.oldkb.IsKeyUp(Keys.Space)) || (Game1.gp.Buttons.A == ButtonState.Pressed && Game1.oldgp.Buttons.A == ButtonState.Released))
                         {
                                 texture.Initialize(KiryuinPull, new Vector2(240, 240), 250, 250, 5, 75, Color.White, 1f, false);
                                 startUp = false;

@@ -211,7 +211,7 @@ namespace KLK
             }
 
             //Controlling the animations
-            if ((Game1.kb.IsKeyDown(Keys.Up) && Game1.kb.IsKeyUp(Keys.Down)) && !dead)
+            if (((Game1.kb.IsKeyDown(Keys.Up) && Game1.kb.IsKeyUp(Keys.Down)) && !dead) || (Game1.gp.ThumbSticks.Left.Y > 0 && !dead))
             {
                 //if this is the first frame you pressed up then it sets everything
                 if (Status != BLOCKUP)
@@ -231,7 +231,7 @@ namespace KLK
                     Check();
                 }
             }
-            else if ((Game1.kb.IsKeyDown(Keys.Down) && Game1.kb.IsKeyUp(Keys.Up)) && !dead)
+            else if (((Game1.kb.IsKeyDown(Keys.Down) && Game1.kb.IsKeyUp(Keys.Up)) && !dead) || (Game1.gp.ThumbSticks.Left.Y < 0 && !dead))
             {
                 if (Status != BLOCKDOWN)
                 {
@@ -274,7 +274,8 @@ namespace KLK
                 sw = null;
 
 
-            if (Keyboard.GetState().IsKeyDown(Keys.Space) && showContinue && Game1.oldkb.IsKeyUp(Keys.Space))
+            if ((Keyboard.GetState().IsKeyDown(Keys.Space) && showContinue && Game1.oldkb.IsKeyUp(Keys.Space)) || 
+                    (Game1.gp.Buttons.A == ButtonState.Pressed && showContinue && Game1.oldgp.Buttons.A == ButtonState.Released))
             {
                 showContinue = false;
                 if(!Game1.mute)
