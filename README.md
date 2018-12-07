@@ -2,12 +2,12 @@
 # Kill la Kill
 I created this game a few years ago in XNA. However, since then XNA has been totatlly deprecated and Monogame has taken its place. So, I have recreated the game inside Monogame to keep its legacy alive. This game is based on the anime series: Kill la Kill. 
 
-The premise of the game is to gather the most points by defending against Satsuki's barraging attacks! The controls for the game are the up and down arrows for defending respective attacks, and on a gamepad the left stick is the direction of your defense (up and down only).
+The premise of the game is to gather the most points by defending against Satsuki's barraging attacks! The controls for the game are inside the *Controls.txt* file in the source. This text file contains both keyboard and gamepad controls.
 
 Quick Links:
 - [Getting Started](#Getting-Started)
 
-- [Running Kill la Kill](#Running-Kill-la-Kill)
+- [Compiling Kill la Kill](#Compiling-Kill-la-Kill)
 
 - [Screenshots](#Screenshots)
 
@@ -27,7 +27,7 @@ You can download the source code for Kill la Kill by a couple methods.
   git clone https://github.com/Szucs-A/Kill_la_Kill.git
   ```
   
-### Running Kill la Kill
+### Compiling Kill la Kill
 After gathering what's required for Kill la Kill; playing the game is very simple.
   1. Start by opening the .sln inside the KLK folder, which will open in Visual Studio 2017
   2. Then simply press the large start button on the top toolbar to compile and run the game.
@@ -35,6 +35,8 @@ After gathering what's required for Kill la Kill; playing the game is very simpl
   ```
   Debug -> Start Debugging
   ```
+### Running Kill la Kill
+If you simply just wanted to run Kill la Kill to play it then download the [source](https://github.com/Szucs-A/Kill_la_Kill/archive/master.zip) and run the *.exe shortcut* in the KLK folder.
   
 ## Built With
 - [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) is the IDE Kill la Kill was built in
