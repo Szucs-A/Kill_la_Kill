@@ -1,0 +1,15 @@
+On a keyboard:
+Up and down arrows for moving through menus, and defending attacks
+Space to select on the main menu, and to skip cutscenes.
+R to restart while in game.
+M to go back to the Menu.
+ESC to quit the game.
+
+On a gamepad:
+X to mute the game.
+A to skip cutscenes and continue text or select option on main menu.
+Y to restart while in game.
+B to go back a screen/exit from main menu.
+Right bumper to make a new hint
+Left Joystick to move around menu and block
+Back to quit the game.
