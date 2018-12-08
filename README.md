@@ -7,7 +7,7 @@ The premise of the game is to gather the most points by defending against Satsuk
 Quick Links:
 - [Getting Started](#Getting-Started)
 
-- [Compiling Kill la Kill](#Compiling-Kill-la-Kill)
+- [Compiling Kill la Kill](#Running-Kill-la-Kill)
 
 - [Screenshots](#Screenshots)
 
@@ -16,8 +16,9 @@ These simple set of instructions will get Kill la Kill up and running on Visual 
 
 ### Requirements
 The requirements to run Kill la Kill are:
-  1. Download and install [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) (VS community is free)
+  1. Download and install [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) (VS community is free) and make sure to select both *.NET desktop development* and *Desktop development with C++* in your workloads while installing VS.
   2. Download and install the latest release of [Monogame for Visual Studio](http://community.monogame.net/t/monogame-3-7-release/10971)
+  3. Download and install [Visual C++ Redistributable Package for VS 2013](https://www.microsoft.com/en-us/download/details.aspx?id=40784)
 
 ### Downloading
 You can download the source code for Kill la Kill by a couple methods.
@@ -27,7 +28,7 @@ You can download the source code for Kill la Kill by a couple methods.
   git clone https://github.com/Szucs-A/Kill_la_Kill.git
   ```
   
-### Compiling Kill la Kill
+### Running Kill la Kill
 After gathering what's required for Kill la Kill; playing the game is very simple.
   1. Start by opening the .sln inside the KLK folder, which will open in Visual Studio 2017
   2. Then simply press the large start button on the top toolbar to compile and run the game.
@@ -35,8 +36,6 @@ After gathering what's required for Kill la Kill; playing the game is very simpl
   ```
   Debug -> Start Debugging
   ```
-### Running Kill la Kill
-If you simply just wanted to run Kill la Kill to play it then download the [source](https://github.com/Szucs-A/Kill_la_Kill/archive/master.zip) and run the *.exe shortcut* in the KLK folder.
   
 ## Built With
 - [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) is the IDE Kill la Kill was built in
