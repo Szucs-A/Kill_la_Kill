@@ -638,6 +638,12 @@
 /processorParam:Quality=Best
 /build:Sounds/FightingTheme.wav
 
+#begin Sounds/Fleshhit.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/Fleshhit.wav
+
 #begin Sounds/MainMenuTheme.wav
 /importer:WavImporter
 /processor:SongProcessor
