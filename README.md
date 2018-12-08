@@ -52,4 +52,4 @@ After gathering what's required for Kill la Kill; playing the game is very simpl
 This project is licensed under the GPL-3.0 License, please see the LICENSE file for details.
 
 ## Acknowledgements
-Apologies - currently working on gathering credits for sounds and songs. :heart:
+All the sounds and songs are credited in *Credits.txt* inside the project. However, thank you to the artists on freesound.org, newgrounds.com, and specifically Hiroyuki Sawano for composing great music! :heart:
